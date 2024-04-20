@@ -29,7 +29,7 @@ module.exports = {
               useNewUrlParser: true,
               useUnifiedTopology: true,
             }).then(() => console.log("Successfully connected to Mongo DB!")).catch((err) => {
-              console.error(`Mongo DB connection failed: ${err}`));
+              console.error(`Mongo DB connection failed: ${err}`);
               process.exit(1);
             };
           };
