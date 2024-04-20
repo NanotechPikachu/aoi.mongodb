@@ -14,7 +14,7 @@ module.exports = {
     userId = userId?.trim()
     guildId = guildId?.trim();
 
-    if (!v[varname]) return d.channel.send("Variable not initailized.");
+    if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
 
     try {
       const userVariable = await UserVar.findOne({
@@ -37,5 +37,5 @@ module.exports = {
     return {
       code: d.util.setCode(data),
     };
-  };
+  }
 };
