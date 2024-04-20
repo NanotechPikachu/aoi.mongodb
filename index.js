@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const fs = require('node:fs'):
+const path = require('node:path'):
 
 module.exports = {
     setup: (Obj) => {
@@ -31,7 +33,7 @@ module.exports = {
             }).then(() => console.log("Successfully connected to Mongo DB!")).catch((err) => {
               console.error(`Mongo DB connection failed: ${err}`);
               process.exit(1);
-            };
+            });
           };
       
         for (const file of fs.readdirSync(path.join(__dirname, "./functions")).filter(file => file.endsWith(".js"))) {
