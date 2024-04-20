@@ -7,7 +7,8 @@ module.exports = {
   code: async d => {
     const data = d.util.aoiFunc(d);
 
-    let [ varname, userId, guildId ] = data.inside.splits;
+    let [ varname, userId = d.author?.id, guildId = d.guild?.id ] = data.inside.splits;
+    let res;
 
     varname = varname?.trim();
     userId = userId?.trim()
@@ -16,7 +17,25 @@ module.exports = {
     if (!v[varname]) return d.channel.send("Variable not initailized.");
 
     try {
-      
-    }
+      const userVariable = await UserVar.findOne({
+        userId: userId,
+        guildId: guildId,
+        variable: varname
+      });
+
+      if (!userVariable) {
+        res = "No assignment!";
+      } else {
+        res = userVariable.variable;
+      }
+    } catch (err) {
+      console.error(`Error in ${data.function}. Error: ${err}`);
+      return;
+    };
+
+    data.result = res;
+    return {
+      code: d.util.setCode(data),
+    };
   };
 };
