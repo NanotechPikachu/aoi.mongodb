@@ -6,7 +6,7 @@ module.exports = {
         const mongoURL = Obj.mongoURL || null;
 
         this.data = {
-            "client": bot,
+            "client": client,
             "dirname": process.cwd(),
             "mongoURL": mongoURL
         };
