@@ -11,7 +11,7 @@ module.exports = {
     let res;
 
     varname = varname?.trim();
-    userId = userId?.trim()
+    userId = userId?.trim();
     guildId = guildId?.trim();
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
