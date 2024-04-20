@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "mongoose": "^8.3.2"
+  },
+  "name": "aoi.mongodb",
+  "version": "1.0.0",
+  "description": "aoi.mongodb - Allows storing of vars to mongoDB without conflicting with aoiDB!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Hi\" to all"
+  },
+  "homepage": "https://github.com/NanotechPikachu/aoi.mongodb",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NanotechPikachu/aoi.mongodb.git"
+  },
+  "keywords": [
+    "aoi.mongodb",
+    "mongo",
+    "aoi.js",
+    "aoi",
+    "dbd",
+    "dbd.js",
+    "db"
+  ],
+  "author": "NanotechPikachu",
+  "license": "MIT"
+}
