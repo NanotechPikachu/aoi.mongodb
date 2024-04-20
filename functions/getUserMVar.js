@@ -26,7 +26,7 @@ module.exports = {
       if (!userVariable) {
         res = "No assignment!";
       } else {
-        res = userVariable.variable;
+        res = userVariable.value;
       }
     } catch (err) {
       console.error(`Error in ${data.function}. Error: ${err}`);
