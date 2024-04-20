@@ -1,12 +1,22 @@
 const v = require('../index.js')?.getData()?.variables;
+const UserVar = require('../schema/userVar.js');
 
 module.exports = {
   name: "$getUserMVar",
   type: "djs",
-  code: async d => {}
-  const data = d.util.aoiFunc(d);
+  code: async d => {
+    const data = d.util.aoiFunc(d);
 
-  let [ varname, user, guildId ] = data.inside.splits;
+    let [ varname, userId, guildId ] = data.inside.splits;
 
-  if (!v[varname]) return d.channel.send("Variable not initailized.");
+    varname = varname?.trim();
+    userId = userId?.trim()
+    guildId = guildId?.trim();
+
+    if (!v[varname]) return d.channel.send("Variable not initailized.");
+
+    try {
+      
+    }
+  };
 };
