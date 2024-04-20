@@ -24,7 +24,18 @@ module.exports = {
       });
 
       if (!userVariable) {
-        res = "No assignment!";
+        const newAssign = await UserVar.findOneAndUpdate({
+          userId: userId,
+          guildId: guildId,
+          variable: varname      
+        }, {
+          $set: { value: v[varname] }
+        }, {
+          upsert: true, new: true
+        });
+        newAssign.markModified();
+        await newAssign.save();
+        res = v[varname];
       } else {
         res = userVariable.value;
       }
