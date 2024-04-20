@@ -37,8 +37,9 @@ module.exports = {
         await newAssign.save();
         res = v[varname];
       } else {
-        res = userVariable.value;
-      }
+        res = (typeof userVariable.value === 'object') ? JSON.stringify(userVariable.value) : userVariable.value; 
+      };
+
     } catch (err) {
       console.error(`Error in ${data.function}. Error: ${err}`);
       return;
