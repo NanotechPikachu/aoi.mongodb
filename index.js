@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const fs = require('node:fs'):
-const path = require('node:path'):
+const fs = require('node:fs');
+const path = require('node:path');
 
 module.exports = {
     setup: (Obj) => {
