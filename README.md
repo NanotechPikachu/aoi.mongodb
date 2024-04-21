@@ -46,8 +46,14 @@ module.exports = {
     num: 0, // Number
     ar: [], // Array
     ob: {}, // Object
-    st: "Hola!" // String
+    st: "Hola!", // String
     boo: true // Boolean
 }
 ```
+
+> [!WARNING]
+> Without the variables file, you cannot use functions nor the app(bot) will work.
+
+> [!NOTE]
+> It is also essential to make(initialize) the variable in this file before accessing it; same as AOIDB.
 
