@@ -71,3 +71,6 @@ module.exports = {
 |  `$setGuildMVar` | `$setGuildVar` | `$setGuildMVar[varname;value;guildId?]` |
 |  `$setMessageMVar` | `$setMessageVar` | `$setMessageMVar[varname;value;messageId?]` |
 |  `$setUserMVar` | `$setUserVar` | `$setUserMVar[varname;value;userId?;guildId?]` |
+
+> [!NOTE]
+> Basically, the difference is that you have to add an "M" before the "Var" in the function name and Walah! you can use AoiDB as well as, Mongo DB in your app!
