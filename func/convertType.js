@@ -1,6 +1,6 @@
 function convertType(str) {
   // Try to convert to number
-  if (!isNaN(str)) {
+  if (!isNaN(str) && str !== null && str !== "" && str !== " ") {
     return Number(str);
   };
   
