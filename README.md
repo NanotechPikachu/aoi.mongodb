@@ -35,7 +35,7 @@ client.loadCommands("./commands/", true);
 aoimongo.setup({
     client: client,
     mongoURL: "MONGO URL", // Like - "mongodb+srv://..."
-    variables: require('Path to Variable File') // You MUST initialize a file with variables and require() it here
+    variables: require("Path to Variable File") // You MUST initialize a file with variables and require() it here. Like - require("./var.js") if var.js is the variables file name
 });
 ```
 
@@ -55,7 +55,7 @@ module.exports = {
 > Without the variables file, you cannot use functions nor the app(bot) will work.
 
 > [!NOTE]
-> It is also essential to make(initialize) the variable in this file before accessing it; the same as AoiDB.
+> It is also essential to make(initialize) the variable in this file before accessing it; the same as AoiDB. Provided, it must not be the same file AKA this file and AoiDB variables file is different.
 
 ## Functions
 
