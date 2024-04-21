@@ -1,9 +1,9 @@
 const v = require('../index.js')?.getData()?.variables;
-const GlobalUserVar = require('../schema/globalUserVar.js');
+const GlobalVar = require('../schema/globalVar.js');
 const { convertType } = require('../func/convertType.js');
 
 module.exports = {
-  name: "$setGlobalUserMVar",
+  name: "$setMVar",
   type: "djs",
   code: async d => {
     const data = d.util.aoiFunc(d);
@@ -20,7 +20,7 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initialized.");
 
     try {
-      const newAssign = await GlobalUserVar.findOneAndUpdate({
+      const newAssign = await GlobalVar.findOneAndUpdate({
         variable: varname      
       }, {
         $set: { value: value }
