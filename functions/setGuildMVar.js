@@ -19,7 +19,6 @@ module.exports = {
     value = convertType(value);
 
     if (v[varname] === undefined) return d.channel.send("Variable not initialized.");
-    if (!varname || varname === "" || varname === null) return "Invalid Var!";
 
     try {
       const newAssign = await GuildVar.findOneAndUpdate({
