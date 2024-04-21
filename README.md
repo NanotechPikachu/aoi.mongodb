@@ -55,5 +55,10 @@ module.exports = {
 > Without the variables file, you cannot use functions nor the app(bot) will work.
 
 > [!NOTE]
-> It is also essential to make(initialize) the variable in this file before accessing it; same as AOIDB.
+> It is also essential to make(initialize) the variable in this file before accessing it; same as AoiDB.
 
+## Functions
+
+| aoi.MongoDB | AoiDB | Usage |
+| ---- | ---- | ----- |
+|  `$getMVar` | `$getVar` | `$getMVar[varname]` |
