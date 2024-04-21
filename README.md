@@ -55,7 +55,7 @@ module.exports = {
 > Without the variables file, you cannot use functions nor the app(bot) will work.
 
 > [!NOTE]
-> It is also essential to make(initialize) the variable in this file before accessing it; the same as AoiDB. Provided, it must not be the same file AKA this file and AoiDB variables file is different.
+> It is also essential to make(initialize) the variable in this file before accessing it; the same as AoiDB. Provided, it must not be the same file AKA this file and the AoiDB variables file are different.
 
 ## Functions
 
