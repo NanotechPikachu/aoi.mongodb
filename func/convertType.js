@@ -5,10 +5,10 @@ function convertType(str) {
   };
   
   // Try to convert to boolean
-  if (str.toLowerCase() === 'true') {
+  if (str?.toLowerCase() === 'true') {
     return true;
   };
-  if (str.toLowerCase() === 'false') {
+  if (str?.toLowerCase() === 'false') {
     return false;
   };
   
