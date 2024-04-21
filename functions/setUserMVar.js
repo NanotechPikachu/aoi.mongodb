@@ -28,7 +28,7 @@ module.exports = {
         guildId: guildId,
         variable: varname      
       }, {
-        $set: { value: value] }
+        $set: { value: value }
       }, {
         upsert: true, new: true
       });
