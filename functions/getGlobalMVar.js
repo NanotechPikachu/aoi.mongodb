@@ -7,7 +7,7 @@ module.exports = {
   code: async d => {
     const data = d.util.aoiFunc(d);
 
-    let [ varname, stringify = true ] = data.inside.splits;
+    let [ varname ] = data.inside.splits;
     let res;
 
     varname = varname?.trim();
@@ -31,7 +31,7 @@ module.exports = {
         await newAssign.save();
         res = v[varname];
       } else {
-        res = (typeof globalVariable.value === 'object') ? ((stringify === "false" || stringify === false) ? globalVariable.value : JSON.stringify(globalVariable.value)) : globalVariable.value; 
+        res = (typeof globalVariable.value === 'object') ? JSON.stringify(globalVariable.value) : globalVariable.value; 
       };
 
     } catch (err) {
