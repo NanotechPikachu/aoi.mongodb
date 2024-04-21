@@ -7,7 +7,7 @@ module.exports = {
   code: async d => {
     const data = d.util.aoiFunc(d);
 
-    let [ varname, stringify = false ] = data.inside.splits;
+    let [ varname, stringify = true ] = data.inside.splits;
     let res;
 
     varname = varname?.trim();
