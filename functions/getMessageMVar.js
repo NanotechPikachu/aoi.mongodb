@@ -16,7 +16,7 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
 
     try {
-      const messageVariable = await GuildVar.findOne({
+      const messageVariable = await MessageVar.findOne({
         messageId: messageId,
         variable: varname
       });
