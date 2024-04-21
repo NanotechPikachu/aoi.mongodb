@@ -27,13 +27,12 @@ module.exports = {
             console.error("Mongo URL not given!");
             process.exit(1);
         } else {
-            mongoose.connect(mongoURL, {
-              useNewUrlParser: true,
-              useUnifiedTopology: true,
-            }).then(() => console.log("Successfully connected to Mongo DB!")).catch((err) => {
-              console.error(`Mongo DB connection failed: ${err}`);
-              process.exit(1);
-            });
+            mongoose.connect(mongoURL)
+                .then(() => console.log("Successfully connected to Mongo DB! ~ aoi.mongoDB"))
+                .catch((err) => {
+                    console.error(`Mongo DB connection failed: ${err}`);
+                    process.exit(1);
+                });
           };
       
         for (const file of fs.readdirSync(path.join(__dirname, "./functions")).filter(file => file.endsWith(".js"))) {
