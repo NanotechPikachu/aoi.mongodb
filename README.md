@@ -8,7 +8,7 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 ## Installation
 
 ```
-npm install github:NanotechPikachu/aoi.mongodb
+npm install github:NanotechPikachu/aoi.mongodb#development
 ```
 
 ## Index Setup
