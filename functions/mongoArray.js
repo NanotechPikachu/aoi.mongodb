@@ -28,10 +28,18 @@ module.exports = {
 
     // The main code starts NOW!
     if (varType === "guild") {
-
-    } else if () {
-
-    }
+      query = {};
+    } else if (varType === "globaluser") {
+      query = {};
+    } else if (varType === "user") {
+      query = {};
+    } else if (varType === "message") {
+      query = {};
+    } else if (varType === "global") {
+      query = {};
+    } else if (varType === "channel") {
+      query = {};
+    };
 
     try {
       if (action === "push") {
