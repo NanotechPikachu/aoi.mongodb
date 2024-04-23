@@ -10,7 +10,6 @@ module.exports = {
   name: "$mongoArray",
   type: "djs",
   code: async d => {
-
     const data = d.util.aoiFunc(d);
 
     let [ varname, action, varType, id = null ] = data.inside.splits;
@@ -25,6 +24,13 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
     if (!varTypes.includes(varType)) return d.channel.send("Invalid variable Type supplied!");
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
+
+    // The main code starts NOW!
+    if (action === "push") {
+
+    } else {
+
+    };
 
   }
 };
