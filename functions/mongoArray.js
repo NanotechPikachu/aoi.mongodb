@@ -15,6 +15,7 @@ module.exports = {
 
     let [ varname, action, varType, id = null ] = data.inside.splits;
     let res;
+    let varTypes = [ "guild", "globaluser", "user", "message", "global", "channel" ];
 
     varname = varname?.trim();
     action = action?.toLowerCase()?.trim();
@@ -22,7 +23,7 @@ module.exports = {
     id = id?.trim();
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
-
+    if (!varTypes.includes(varType)) return d.channel.send("Invalid variable Type supplied!");
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
 
   }
