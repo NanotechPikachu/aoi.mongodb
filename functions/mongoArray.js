@@ -26,10 +26,19 @@ module.exports = {
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
 
     // The main code starts NOW!
-    if (action === "push") {
+    try {
+      if (action === "push") {
 
-    } else {
+      } else {
 
+      };
+    } catch (err) {
+      console.error(err);
+      return;
+    };
+
+    return {
+      code: d.util.setCode(data),
     };
 
   }
