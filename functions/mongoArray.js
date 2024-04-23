@@ -12,7 +12,7 @@ module.exports = {
   code: async d => {
     const data = d.util.aoiFunc(d);
 
-    let [ varname, action, varType, id = null ] = data.inside.splits;
+    let [ varname, value, action, varType, id = null ] = data.inside.splits;
     let query;
     let res;
     let varTypes = [ "guild", "globaluser", "user", "message", "global", "channel" ];
@@ -21,6 +21,10 @@ module.exports = {
     action = action?.toLowerCase()?.trim();
     varType = varType?.toLowerCase()?.trim();
     id = id?.trim();
+    value = value?.trim();
+
+    // Converting the Data Type of Value depending on the input
+    value = convertType(value);
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
     if (!varTypes.includes(varType)) return d.channel.send("Invalid variable Type supplied!");
