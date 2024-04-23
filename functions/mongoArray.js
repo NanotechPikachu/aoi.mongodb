@@ -4,7 +4,7 @@ const GuildVar = require('../schema/guildVar.js');
 const UserVar = require('../schema/userVar.js');
 const GlobalUserVar = require('../schema/globalUserVar.js');
 const GlobalVar = require('../schema/globalVar.js');
-
+const MessageVar = require('../schema/messageVar.js');
 
 module.exports = {
   name: "$mongoArray",
