@@ -13,6 +13,7 @@ module.exports = {
     const data = d.util.aoiFunc(d);
 
     let [ varname, action, varType, id = null ] = data.inside.splits;
+    let query;
     let res;
     let varTypes = [ "guild", "globaluser", "user", "message", "global", "channel" ];
 
@@ -26,6 +27,12 @@ module.exports = {
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
 
     // The main code starts NOW!
+    if (varType === "guild") {
+
+    } else if () {
+
+    }
+
     try {
       if (action === "push") {
 
