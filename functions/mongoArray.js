@@ -11,5 +11,19 @@ module.exports = {
   type: "djs",
   code: async d => {
 
+    const data = d.util.aoiFunc(d);
+
+    let [ varname, action, varType, id = null ] = data.inside.splits;
+    let res;
+
+    varname = varname?.trim();
+    action = action?.toLowerCase()?.trim();
+    varType = varType?.toLowerCase()?.trim();
+    id = id?.trim();
+
+    if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
+
+    if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
+
   }
 };
