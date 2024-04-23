@@ -33,5 +33,9 @@ module.exports = {
       console.error(`Error in ${data.function}. Error: ${err}`);
       return;
     };
+
+    return {
+      code: d.util.setCode(data),
+    };
   }
 };
