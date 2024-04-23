@@ -33,7 +33,7 @@ module.exports = {
 
       };
     } catch (err) {
-      console.error(err);
+      console.error(`Error in ${data.function}. Error: ${err}`);
       return;
     };
 
