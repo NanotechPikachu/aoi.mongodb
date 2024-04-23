@@ -1,4 +1,5 @@
 const v = require('../index.js')?.getData()?.variables;
+const { convertType } = require('../func/convertType.js');
 const ChannelVar = require('../schema/channelVar.js');
 const GuildVar = require('../schema/guildVar.js');
 const UserVar = require('../schema/userVar.js');
@@ -29,6 +30,7 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
     if (!varTypes.includes(varType)) return d.channel.send("Invalid variable Type supplied!");
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
+    if (!Array.isArray(value)) return d.channel.send("Enter value is not a valid `Array`");
 
     // The main code starts NOW!
     if (varType === "guild") {
