@@ -16,6 +16,7 @@ module.exports = {
     let [ varname, value, action, varType, id = null ] = data.inside.splits;
     let query;
     let res;
+    let find;
     let varTypes = [ "guild", "globaluser", "user", "message", "global", "channel" ];
 
     varname = varname?.trim();
@@ -34,7 +35,20 @@ module.exports = {
 
     // The main code starts NOW!
     if (varType === "guild") {
-      query = {};
+      let guildId; let userId;
+      if (!id || id === "") {
+        userId = d.author?.id; guildId = d.guild?.id;
+      } else {
+        userId = id?.split(":")[0].trim();
+        guildId = id?.split(":")[1].trim();
+      };
+      if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
+      query = { "guildId": guildId, "userId": userId, "variable": varname };
+      find = await GuildVar.findOne({
+        guildId: guildId,
+        userId: userId,
+        variable: varname
+      });
     } else if (varType === "globaluser") {
       query = {};
     } else if (varType === "user") {
