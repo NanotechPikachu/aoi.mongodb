@@ -31,7 +31,6 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
     if (!varTypes.includes(varType)) return d.channel.send("Invalid variable Type supplied!");
     if (action !== "push" && action !== "pull") return d.channel.send("Invalid action provided!");
-    if (!Array.isArray(value)) return d.channel.send("Enter value is not a valid `Array`");
 
     // The main code starts NOW!
     if (varType === "guild") {
@@ -43,23 +42,26 @@ module.exports = {
         guildId = id?.split(":")[1].trim();
       };
       if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
-      query = { "guildId": guildId, "userId": userId, "variable": varname };
-      find = await GuildVar.findOne({
-        guildId: guildId,
-        userId: userId,
-        variable: varname
-      });
+      query = { guildId: guildId, userId: userId, variable: varname };
+      find = await GuildVar.findOne(query);
     } else if (varType === "globaluser") {
-      query = {};
+      query = { userId: userId, variable: varname };
+      find = await GlobalUserVar.findOne(query);
     } else if (varType === "user") {
-      query = {};
+      query = { userId: userId, variable: varname };
+      find = await UserVar.findOne(query);
     } else if (varType === "message") {
-      query = {};
+      query = { messageId: messageId, variable: varname };
+      find = await MessageVar.findOne(query);
     } else if (varType === "global") {
-      query = {};
+      query = { variable: varname };
+      find = await GlobalVar.findOne(query);
     } else if (varType === "channel") {
-      query = {};
+      query = { channelId: channelId, variable: varname };
+      find = await ChannelVar.findOne(query);
     };
+
+    if (!Array.isArray(find)) return d.channel.send("Enter value is not a valid `Array`");
 
     try {
       if (action === "push") {
