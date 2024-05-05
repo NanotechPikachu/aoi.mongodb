@@ -87,9 +87,10 @@ Syntax: `$mongoArray[varname;value;action;varType;id?]`
 - varType - user / globaluser / guild / global / message / channel
 
 - id - default null(or depending on varType default will be auto added). If you want to use vars which has 2 params like user(which supports guildId and userId) use like - if "user" -> userId:guildId
-<hr />
-Note: You need to initialize the var by running `$get{varType}MVar[varname;id;id(if any)]` once before running this function else it will error.
 
+<hr />
+
+Note: You need to initialize the var by running `$get{varType}MVar[varname;id;id(if any)]` once before running this function else it will error.
 
 
 > [!NOTE]
