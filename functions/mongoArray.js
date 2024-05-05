@@ -82,7 +82,7 @@ module.exports = {
         await u.markModified();
         await u.save();
       } else {
-
+        return;
       };
     } catch (err) {
       console.error(`Error in ${data.function}. Error: ${err}`);
