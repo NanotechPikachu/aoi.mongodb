@@ -95,8 +95,17 @@ module.exports = {
         });
         await u.markModified();
         await u.save();
+      } else if (action === "pull") {
+        const u = await db.findOneAndUpdate(
+          query, {
+          $pull: { value: value },
+        }, {
+           upsert: true, new: true
+        });
+        await u.markModified();
+        await u.save();
       } else {
-        return;
+        return d.channel.send('Invalid action provided!');
       };
     } catch (err) {
       console.error(`Error in ${data.function}. Error: ${err}`);
