@@ -68,11 +68,18 @@ module.exports = {
       find = await ChannelVar.findOne(query);
     };
 
-    if (!Array.isArray(find)) return d.channel.send("Enter value is not a valid `Array`");
+    if (!find || !find?.value || !Array.isArray(find?.value)) return d.channel.send("Enter value is not a valid `Array`");
 
     try {
       if (action === "push") {
-
+        const u = await db.findOneAndUpdate({
+          query
+        }, {
+          $push: { value: value },
+        }, {
+           upsert: true, new: true
+        });
+        await u.markModified()
       } else {
 
       };
