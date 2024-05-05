@@ -47,7 +47,7 @@ module.exports = {
       find = await GuildVar.findOne(query);
     } else if (varType === "globaluser") {
       let userId = id?.trim();
-      if (!id || id === "") userId = d.user?.id;
+      if (!id || id === "") userId = d.author?.id;
       if (!userId) return d.channel.send("User ID not provided or Syntax Error!");
       db = GlobalUserVar;
       query = { userId: userId, variable: varname };
@@ -56,7 +56,7 @@ module.exports = {
       let userId = id?.split(":")[0]?.trim();
       let guildId = id?.split(":")[0]?.trim();
       if (!id || id === "") {
-        userId = d.user?.id;
+        userId = d.author?.id;
         guildId = d.guild?.id;
       };
       if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
