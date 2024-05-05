@@ -47,14 +47,24 @@ module.exports = {
       query = { guildId: guildId, userId: userId, variable: varname };
       find = await GuildVar.findOne(query);
     } else if (varType === "globaluser") {
+      let userId = id?.trim();
+      if (!id || id === "") userId = d.user?.id;
       db = GlobalUserVar;
       query = { userId: userId, variable: varname };
       find = await GlobalUserVar.findOne(query);
     } else if (varType === "user") {
+      let userId = id?.split(":")[0]?.trim();
+      let guildId = id?.split(":")[0]?.trim();
+      if (!id || id === "") {
+        userId = d.user?.id;
+        guildId = d.guild?.if;
+      };
       db = UserVar;
-      query = { userId: userId, variable: varname };
+      query = { userId: userId, guildId: guildId, variable: varname };
       find = await UserVar.findOne(query);
     } else if (varType === "message") {
+      let messageId = id?.trim();
+      if (!id || id === "") messageId = d.message?.id;
       db = MessageVar;
       query = { messageId: messageId, variable: varname };
       find = await MessageVar.findOne(query);
@@ -63,6 +73,8 @@ module.exports = {
       query = { variable: varname };
       find = await GlobalVar.findOne(query);
     } else if (varType === "channel") {
+      let channelId = id?.trim();
+      if (!id || id === "") channelId = d.channel?.id;
       db = ChannelVar;
       query = { channelId: channelId, variable: varname };
       find = await ChannelVar.findOne(query);
