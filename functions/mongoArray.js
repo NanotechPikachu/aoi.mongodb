@@ -17,6 +17,7 @@ module.exports = {
     let query;
     let res;
     let find;
+    let db;
     let varTypes = [ "guild", "globaluser", "user", "message", "global", "channel" ];
 
     varname = varname?.trim();
@@ -42,21 +43,27 @@ module.exports = {
         guildId = id?.split(":")[1].trim();
       };
       if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
+      db = GuildVar;
       query = { guildId: guildId, userId: userId, variable: varname };
       find = await GuildVar.findOne(query);
     } else if (varType === "globaluser") {
+      db = GlobalUserVar;
       query = { userId: userId, variable: varname };
       find = await GlobalUserVar.findOne(query);
     } else if (varType === "user") {
+      db = UserVar;
       query = { userId: userId, variable: varname };
       find = await UserVar.findOne(query);
     } else if (varType === "message") {
+      db = MessageVar;
       query = { messageId: messageId, variable: varname };
       find = await MessageVar.findOne(query);
     } else if (varType === "global") {
+      db = GlobalVar;
       query = { variable: varname };
       find = await GlobalVar.findOne(query);
     } else if (varType === "channel") {
+      db = ChannelVar;
       query = { channelId: channelId, variable: varname };
       find = await ChannelVar.findOne(query);
     };
