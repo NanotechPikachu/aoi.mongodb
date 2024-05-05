@@ -35,20 +35,20 @@ module.exports = {
 
     // The main code starts NOW!
     if (varType === "guild") {
-      let guildId; let userId;
+      let guildId; 
       if (!id || id === "") {
-        userId = d.author?.id; guildId = d.guild?.id;
+        guildId = d.guild?.id;
       } else {
-        userId = id?.split(":")[0].trim();
-        guildId = id?.split(":")[1].trim();
+        guildId = id;
       };
-      if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
+      if (!guildId) return d.channel.send("Guild ID not provided or Syntax Error!");
       db = GuildVar;
       query = { guildId: guildId, userId: userId, variable: varname };
       find = await GuildVar.findOne(query);
     } else if (varType === "globaluser") {
       let userId = id?.trim();
       if (!id || id === "") userId = d.user?.id;
+      if (!userId) return d.channel.send("User ID not provided or Syntax Error!");
       db = GlobalUserVar;
       query = { userId: userId, variable: varname };
       find = await GlobalUserVar.findOne(query);
@@ -59,12 +59,14 @@ module.exports = {
         userId = d.user?.id;
         guildId = d.guild?.id;
       };
+      if (!guildId || !userId) return d.channel.send("Guild ID or User ID not provided or Syntax Error!");
       db = UserVar;
       query = { userId: userId, guildId: guildId, variable: varname };
       find = await UserVar.findOne(query);
     } else if (varType === "message") {
       let messageId = id?.trim();
       if (!id || id === "") messageId = d.message?.id;
+      if (!messageId) return d.channel.send("Message ID not provided or Syntax Error!");
       db = MessageVar;
       query = { messageId: messageId, variable: varname };
       find = await MessageVar.findOne(query);
@@ -75,12 +77,13 @@ module.exports = {
     } else if (varType === "channel") {
       let channelId = id?.trim();
       if (!id || id === "") channelId = d.channel?.id;
+      if (!channelId) return d.channel.send("Channel ID not provided or Syntax Error!");
       db = ChannelVar;
       query = { channelId: channelId, variable: varname };
       find = await ChannelVar.findOne(query);
     };
 
-    if (!find || !find?.value || !Array.isArray(find?.value)) return d.channel.send("Enter value is not a valid `Array`");
+    if (!find || (find?.value === undefined) || !Array.isArray(find?.value)) return d.channel.send("Enter value is not a valid `Array`");
 
     try {
       if (action === "push") {
