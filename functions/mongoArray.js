@@ -57,7 +57,7 @@ module.exports = {
       let guildId = id?.split(":")[0]?.trim();
       if (!id || id === "") {
         userId = d.user?.id;
-        guildId = d.guild?.if;
+        guildId = d.guild?.id;
       };
       db = UserVar;
       query = { userId: userId, guildId: guildId, variable: varname };
