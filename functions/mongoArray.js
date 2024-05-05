@@ -84,9 +84,8 @@ module.exports = {
 
     try {
       if (action === "push") {
-        const u = await db.findOneAndUpdate({
-          query
-        }, {
+        const u = await db.findOneAndUpdate(
+          query, {
           $push: { value: value },
         }, {
            upsert: true, new: true
