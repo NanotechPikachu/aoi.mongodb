@@ -2,10 +2,13 @@
 
 A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 
+> [!WARNING]
+> Don't install this branch AKA "development" branch. It's highly unstable and probably broken. If you install then, 💀
+
 ## Installation
 
 ```
-npm install github:NanotechPikachu/aoi.mongodb
+npm install github:NanotechPikachu/aoi.mongodb#development
 ```
 
 ## Index Setup
