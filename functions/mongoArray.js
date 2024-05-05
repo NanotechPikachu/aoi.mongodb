@@ -79,7 +79,8 @@ module.exports = {
         }, {
            upsert: true, new: true
         });
-        await u.markModified()
+        await u.markModified();
+        await u.save();
       } else {
 
       };
