@@ -84,7 +84,7 @@ module.exports = {
     };
 
     if (!find || find?.value === undefined) {
-      const newAssign = await db.findOneAndUpdate(
+      const find = await db.findOneAndUpdate(
         query, {
         $set: { value: v[varname] }
       }, {
