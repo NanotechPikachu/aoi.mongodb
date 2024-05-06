@@ -83,6 +83,17 @@ module.exports = {
       find = await ChannelVar.findOne(query);
     };
 
+    if (!find) {
+      const newAssign = await db.findOneAndUpdate(
+        query, {
+        $set: { value: v[varname] }
+      }, {
+        upsert: true, new: true
+      });
+      newAssign.markModified();
+      await newAssign.save();
+   };
+
     if (!find || (find?.value === undefined) || !Array.isArray(find?.value)) return d.channel.send("Enter value is not a valid `Array`");
 
     try {
