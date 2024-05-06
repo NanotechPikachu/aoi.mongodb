@@ -2,7 +2,7 @@ const v = require('../index.js')?.getData()?.variables;
 const GlobalVar = require('../schema/globalVar.js');
 const { convertType } = require('./convertType.js');
 
-async funtion setGlobalVar(varname, value) {
+async function setGlobalVar(varname, value) {
 
   value = convertType(value);
   if (v[varname] === undefined) return "Variable not initialized.";
