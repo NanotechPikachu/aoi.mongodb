@@ -27,3 +27,5 @@ async function getGlobalVar(varname) {
     return;
   };
 };
+
+module.exports = getGlobalVar;
