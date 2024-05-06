@@ -1,7 +1,7 @@
 const MessageVar = require('../schema/messageVar.js');
 const v = require('../index.js')?.getData()?.variables;
 
-async function getGuildVar(varname, messageId) {
+async function getMessageVar(varname, messageId) {
   if (v[varname] === undefined) return "Variable not initailized.";
   
   try {
