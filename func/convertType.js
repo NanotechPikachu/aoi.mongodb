@@ -9,7 +9,7 @@ function convertType(str) {
   };
   
   // Try to parse as JSON
-  if (isNaN(str) && str !== null && str !== "" && str !== " ") {
+  if ((typeof str === 'number') && str !== null && str !== "" && str !== " ") {
     try {
       return JSON.parse(str);
     } catch (e) {
