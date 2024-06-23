@@ -78,7 +78,7 @@ module.exports = {
 
 ### Add-on Functions
 
-##### `$mongoArray`
+#### `$mongoArray`
 
 A function for performing Array functions "push" and "pull".
 
@@ -89,6 +89,12 @@ Syntax: `$mongoArray[varname;value;action;varType;id?]`
 - varType - user / globaluser / guild / global / message / channel
 
 - id - default null(or depending on varType default will be auto added). If you want to use vars which has 2 params like user(which supports guildId and userId) use like - if "user" -> userId:guildId
+
+#### `$mongoPing`
+
+A function which returns the latency of mongo DB in ms.
+
+Syntax: `$mongoPing`
 
 
 > [!NOTE]
