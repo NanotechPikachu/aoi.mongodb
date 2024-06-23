@@ -128,3 +128,9 @@ This package also has JavaScript functions which can be used with `$djsEval` whi
 - `setChannelVar()`
 - `setMessageVar()`
 - `setGlobalVar()`
+
+In order to use the above function, import it in the JS medium like:
+
+```js
+const { functionName } = require('aoi.mongodb/func'); // 'func' is the path where these functions are made
+```
