@@ -102,3 +102,14 @@ Syntax: `$mongoPing`
 
 > [!NOTE]
 > Basically, the difference is that you have to add an "M" before the "Var" in the function name and Walah! you can use AoiDB as well as, Mongo DB in your app!
+
+<br />
+<hr />
+<br />
+
+## DiscordJS Usage
+
+This package also has JavaScript functions which can be used with `$djsEval` which you are evaling DJS / JS in aoi. 
+
+> [!NOTE]
+> This section can only be used in JS evaling.
