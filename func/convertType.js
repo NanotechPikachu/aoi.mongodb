@@ -1,8 +1,4 @@
 function convertType(str) {
-  // Try to convert to number
-  if (!isNaN(str) && str !== null && str !== "" && str !== " ") {
-    return Number(str);
-  };
   
   // Try to convert to boolean
   if (str?.toLowerCase() === 'true') {
@@ -13,10 +9,12 @@ function convertType(str) {
   };
   
   // Try to parse as JSON
-  try {
-    return JSON.parse(str);
-  } catch (e) {
-    // Not JSON, return as string
+  if ((typeof str === 'number') && str !== null && str !== "" && str !== " ") {
+    try {
+      return JSON.parse(str);
+    } catch (e) {
+      // Not JSON, return as string
+    };
   };
   
   // Return as string if all else fails
