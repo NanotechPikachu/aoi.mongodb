@@ -96,6 +96,8 @@ A function which returns the latency of mongo DB in ms.
 
 Syntax: `$mongoPing`
 
+<br />
+<hr />
 
 > [!NOTE]
 > Basically, the difference is that you have to add an "M" before the "Var" in the function name and Walah! you can use AoiDB as well as, Mongo DB in your app!
