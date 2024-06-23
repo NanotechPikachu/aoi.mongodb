@@ -2,13 +2,12 @@
 
 A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 
-> [!WARNING]
-> Don't install this branch AKA "development" branch. It's highly unstable and probably broken. If you install then, 💀
+<hr />
 
 ## Installation
 
 ```
-npm install github:NanotechPikachu/aoi.mongodb#development
+npm install github:NanotechPikachu/aoi.mongodb
 ```
 
 ## Index Setup
@@ -77,6 +76,19 @@ module.exports = {
 |  `$setUserMVar` | `$setUserVar` | `$setUserMVar[varname;value;userId?;guildId?]` |
 |  `$setChannelMVar` | `$setChannelVar` | `$setChannelMVar[varname;value;channelId?]` |
 
+### Add-on Functions
+
+##### `$mongoArray`
+
+A function for performing Array functions "push" and "pull".
+
+Syntax: `$mongoArray[varname;value;action;varType;id?]`
+
+- Action - push / pull
+
+- varType - user / globaluser / guild / global / message / channel
+
+- id - default null(or depending on varType default will be auto added). If you want to use vars which has 2 params like user(which supports guildId and userId) use like - if "user" -> userId:guildId
 
 
 > [!NOTE]
