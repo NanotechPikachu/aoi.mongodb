@@ -109,7 +109,11 @@ Syntax: `$mongoPing`
 
 ## DiscordJS Usage
 
-This package also has JavaScript functions which can be used with `$djsEval` which you are evaling DJS / JS in aoi. 
+This package also has JavaScript functions which can be used with `$djsEval` which you are evaling DJS / JS in aoi or not. 
 
 > [!NOTE]
-> This section can only be used in JS evaling.
+> This section can only be used in JS evaling. But, **can be used with non aoi packages too!**
+
+### Functions 
+
+- `getUserVar()`
