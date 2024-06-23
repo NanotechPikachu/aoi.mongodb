@@ -78,7 +78,7 @@ module.exports = {
 
 ### Add-on Functions
 
-##### `$mongoArray`
+#### `$mongoArray`
 
 A function for performing Array functions "push" and "pull".
 
