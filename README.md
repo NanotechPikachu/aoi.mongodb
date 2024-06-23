@@ -90,6 +90,47 @@ Syntax: `$mongoArray[varname;value;action;varType;id?]`
 
 - id - default null(or depending on varType default will be auto added). If you want to use vars which has 2 params like user(which supports guildId and userId) use like - if "user" -> userId:guildId
 
+#### `$mongoPing`
+
+A function which returns the latency of mongo DB in ms.
+
+Syntax: `$mongoPing`
+
+<br />
+<hr />
+<br />
 
 > [!NOTE]
 > Basically, the difference is that you have to add an "M" before the "Var" in the function name and Walah! you can use AoiDB as well as, Mongo DB in your app!
+
+<br />
+<hr />
+<br />
+
+## DiscordJS Usage
+
+This package also has JavaScript functions which can be used with `$djsEval` which you are evaling DJS / JS in aoi or not. 
+
+> [!NOTE]
+> This section can only be used in JS evaling. But, **can be used with non aoi packages too!**
+
+### Functions 
+
+- `getUserVar()`
+- `getGlobalUserVar()`
+- `getGuildVar()`
+- `getChannelVar()`
+- `getMessageVar()`
+- `getGlobalVar()`
+- `setUserVar()`
+- `setGlobalUserVar()`
+- `setGuildVar()`
+- `setChannelVar()`
+- `setMessageVar()`
+- `setGlobalVar()`
+
+In order to use the above function, import it in the JS medium like:
+
+```js
+const { functionName } = require('aoi.mongodb/func'); // 'func' is the path where these functions are made
+```
