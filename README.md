@@ -97,7 +97,7 @@ A function which returns the latency of mongo DB in ms.
 Syntax: `$mongoPing`
 
 <br />
-<hr color="red" />
+<hr />
 <br />
 
 > [!NOTE]
