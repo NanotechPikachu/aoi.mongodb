@@ -117,3 +117,14 @@ This package also has JavaScript functions which can be used with `$djsEval` whi
 ### Functions 
 
 - `getUserVar()`
+- `getGlobalUserVar()`
+- `getGuildVar()`
+- `getChannelVar()`
+- `getMessageVar()`
+- `getGlobalVar()`
+- `setUserVar()`
+- `setGlobalUserVar()`
+- `setGuildVar()`
+- `setChannelVar()`
+- `setMessageVar()`
+- `setGlobalVar()`
