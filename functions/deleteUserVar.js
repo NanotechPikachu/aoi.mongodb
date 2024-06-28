@@ -13,7 +13,7 @@ module.exports = {
     varname = varname?.trim();
     userId = userId?.trim();
     guildId = guildId?.trim();
-    returnCount = returnCount?.trim()?.to lowercase();
+    returnCount = returnCount?.trim()?.toLowerCase();
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
 
