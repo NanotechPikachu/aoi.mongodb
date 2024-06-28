@@ -16,5 +16,10 @@ module.exports = {
     returnCount = returnCount?.trim()?.to lowercase();
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
+
+    data.result = ( returnCount === "true" ? res : null );
+    return {
+      code: d.util.setCode(data),
+    };
   }
 }
