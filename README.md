@@ -84,7 +84,7 @@ A function for performing Array functions "push" and "pull".
 
 Syntax: `$mongoArray[varname;value;action;varType;id?]`
 
-- Action - push / pull
+- action - push / pull
 
 - varType - user / globaluser / guild / global / message / channel
 
@@ -95,6 +95,18 @@ Syntax: `$mongoArray[varname;value;action;varType;id?]`
 A function which returns the latency of mongo DB in ms.
 
 Syntax: `$mongoPing`
+
+#### `$deleteUserVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteUserVar[varname;userId?;guildId?;returnCount?]`
+
+- userId - The User ID whose var should be reset. **You can also pass "all" to reset all users var in a specific guild.** (Default - Author ID)
+
+- guildId - ID of the guild where user is in to reset. (Default - User's Guild ID)
+
+- returnCount - If you wish to return the number of users var that it has reset, enable it by passing "true". Only when passing "all" in `userId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular user in Mongo DB). (Default - false)
 
 <br />
 <hr />
