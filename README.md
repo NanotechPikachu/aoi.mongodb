@@ -12,6 +12,10 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 - [Functions](#functions)
   - [AOI Based](#functions)
   - [Specific to this package](#add-on-functions)
+    - [`$mongoArray`](#mongoarray)
+    - [`$mongoPing`](#mongoping)
+    - [`$deleteUserVar`](#deleteuservar)
+    - [`$deleteGuildVar`](#deleteguildvar)
 
 <hr />
 
