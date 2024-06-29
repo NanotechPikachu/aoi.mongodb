@@ -11,7 +11,7 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 - [Variables File](#variables-file)
 - [Functions](#functions)
   - [AOI Based](#functions)
-  - [Specific to this package](add-on-functions)
+  - [Specific to this package](#add-on-functions)
 
 <hr />
 
