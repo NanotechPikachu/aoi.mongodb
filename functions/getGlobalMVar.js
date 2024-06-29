@@ -29,7 +29,7 @@ module.exports = {
         });
         newAssign.markModified();
         await newAssign.save();
-        res = v[varname];
+        res = (typeof v[varname] === 'object' ? JSON.stringify(v[varname]) : v[varname]);
       } else {
         res = (typeof globalVariable.value === 'object') ? JSON.stringify(globalVariable.value) : globalVariable.value; 
       };
