@@ -22,7 +22,7 @@ module.exports = {
               guildId: guildId,
               variable: varname
             }); 
-            res = userVariable.deletedCount;
+            res = guildVariable.deletedCount;
         } else if (guildId === "all") {
              const guildVariable = await GuildVar.deleteMany({
               variable: varname
