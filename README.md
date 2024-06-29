@@ -7,6 +7,7 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 ## Table Of Contents
 
 - [Installation](#Installation)
+- [Index Setup](#Index%20Setup)
 
 <hr />
 
