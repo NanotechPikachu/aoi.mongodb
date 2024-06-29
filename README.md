@@ -4,6 +4,12 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 
 <hr />
 
+## Table Of Contents
+
+- [Installation](#Installation)
+
+<hr />
+
 ## Installation
 
 ```
