@@ -17,6 +17,26 @@ module.exports = {
 
     if (v[varname] === undefined) return d.channel.send("Variable not initailized.");
 
+    try {
+        if (userId !== "all") {
+            const userVariable = await UserVar.deleteOne({
+              userId: userId,
+              guildId: guildId,
+              variable: varname
+            }); 
+            res = userVariable.deletedCount;
+        } else if (userId === "all") {
+             const userVariable = await UserVar.deleteMany({       
+              guildId: guildId,
+              variable: varname
+            });
+            res = userVariable.deletedCount;
+        } 
+    } catch (err) {
+       console.error(`Error in ${data.function}. Error: ${err}`);
+        return;
+    };
+
     data.result = ( returnCount === "true" ? res : null );
     return {
       code: d.util.setCode(data),
