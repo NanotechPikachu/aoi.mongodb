@@ -108,6 +108,16 @@ Syntax: `$deleteUserVar[varname;userId?;guildId?;returnCount?]`
 
 - returnCount - If you wish to return the number of users var that it has reset, enable it by passing "true". Only when passing "all" in `userId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular user in Mongo DB). (Default - false)
 
+#### `$deleteGuildVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteGuildVar[varname;guildId?;returnCount?]`
+
+- guildId - ID of the guild to reset. **You can also pass "all" to reset all users var in a specific guild.** (Default - The current Guild ID)
+
+- returnCount - If you wish to return the number of guilds var that it has reset, enable it by passing "true". Only when passing "all" in `guildId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
+
 <br />
 <hr />
 <br />
