@@ -16,6 +16,7 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
     - [`$mongoPing`](#mongoping)
     - [`$deleteUserVar`](#deleteuservar)
     - [`$deleteGuildVar`](#deleteguildvar)
+- [Discord JS Usage](#discordjs-usage)
 
 <hr />
 
