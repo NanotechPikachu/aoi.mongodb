@@ -32,7 +32,7 @@ module.exports = {
         });
         newAssign.markModified();
         await newAssign.save();
-        res = v[varname];
+        res = (typeof v[varname] === 'object' ? JSON.stringify(v[varname]) : v[varname]);
       } else {
         res = (typeof globalUserVariable.value === 'object') ? JSON.stringify(globalUserVariable.value) : globalUserVariable.value; 
       };
