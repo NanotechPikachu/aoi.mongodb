@@ -141,7 +141,7 @@ This function works primarily like a reset function which will erase the data fr
 
 Syntax: `$deleteMessageVar[varname;messageId?;returnCount?]`
 
-- messageId - ID of the message to reset. **You can also pass "all" to reset all messages var.** (Default - The current Guild ID)
+- messageId - ID of the message to reset. **You can also pass "all" to reset all messages var.** (Default - The current Message ID)
 
 - returnCount - If you wish to return the number of messages var that it has reset, enable it by passing "true". Only when passing "all" in `messageId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
 
