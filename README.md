@@ -4,6 +4,25 @@ A Mongo DB connecting package for AoiJS without conflicting with AoiDB!
 
 <hr />
 
+## Table Of Contents
+
+- [Installation](#installation)
+- [Index Setup](#index-setup)
+- [Variables File](#variables-file)
+- [Functions](#functions)
+  - [AOI Based](#functions)
+  - [Specific to this package](#add-on-functions)
+    - [`$mongoArray`](#mongoarray)
+    - [`$mongoPing`](#mongoping)
+    - [`$deleteUserVar`](#deleteuservar)
+    - [`$deleteGuildVar`](#deleteguildvar)
+    - [`$deleteMessageVar`](#deletemessagevar)
+    - [`$deleteChannelVar`](#deletechannelvar)
+    - [`$deleteGlobalUserVar`](#deleteglobaluservar)
+- [Discord JS Usage](#discordjs-usage)
+
+<hr />
+
 ## Installation
 
 ```
@@ -84,7 +103,7 @@ A function for performing Array functions "push" and "pull".
 
 Syntax: `$mongoArray[varname;value;action;varType;id?]`
 
-- Action - push / pull
+- action - push / pull
 
 - varType - user / globaluser / guild / global / message / channel
 
@@ -96,12 +115,64 @@ A function which returns the latency of mongo DB in ms.
 
 Syntax: `$mongoPing`
 
+#### `$deleteUserVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteUserVar[varname;userId?;guildId?;returnCount?]`
+
+- userId - The User ID whose var should be reset. **You can also pass "all" to reset all users var in a specific guild.** (Default - Author ID)
+
+- guildId - ID of the guild where user is in to reset. (Default - User's Guild ID)
+
+- returnCount - If you wish to return the number of users var that it has reset, enable it by passing "true". Only when passing "all" in `userId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular user in Mongo DB). (Default - false)
+
+#### `$deleteGuildVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteGuildVar[varname;guildId?;returnCount?]`
+
+- guildId - ID of the guild to reset. **You can also pass "all" to reset all users var in a specific guild.** (Default - The current Guild ID)
+
+- returnCount - If you wish to return the number of guilds var that it has reset, enable it by passing "true". Only when passing "all" in `guildId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
+
+#### `$deleteMessageVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteMessageVar[varname;messageId?;returnCount?]`
+
+- messageId - ID of the message to reset. **You can also pass "all" to reset all messages var.** (Default - The current Message ID)
+
+- returnCount - If you wish to return the number of messages var that it has reset, enable it by passing "true". Only when passing "all" in `messageId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
+
+#### `$deleteChannelVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteChannelVar[varname;channelId?;returnCount?]`
+
+- channelId - ID of the channel to reset. **You can also pass "all" to reset all channels var.** (Default - The current Channel ID)
+
+- returnCount - If you wish to return the number of channels var that it has reset, enable it by passing "true". Only when passing "all" in `channelId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
+
+#### `$deleteGlobalUserVar`
+
+This function works primarily like a reset function which will erase the data from MongoDB.
+
+Syntax: `$deleteGlobalUserVar[varname;userId?;returnCount?]`
+
+- userId - ID of the user to reset. **You can also pass "all" to reset all users var.** (Default - The current Message ID)
+
+- returnCount - If you wish to return the number of users var that it has reset, enable it by passing "true". Only when passing "all" in `userId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
+
 <br />
 <hr />
 <br />
 
 > [!NOTE]
-> Basically, the difference is that you have to add an "M" before the "Var" in the function name and Walah! you can use AoiDB as well as, Mongo DB in your app!
+> Basically, the difference is that you have to add an "M" before the "Var" in the function name(AOI-Based) and Walah! you can use AoiDB as well as, Mongo DB in your app!
 
 <br />
 <hr />
