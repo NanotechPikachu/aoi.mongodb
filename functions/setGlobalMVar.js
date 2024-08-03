@@ -1,6 +1,8 @@
 const v = require('../index.js')?.getData()?.variables;
+const url = require('../index.js')?.getData()?.mongoURL;
 const GlobalVar = require('../schema/globalVar.js');
 const { convertType } = require('../func/convertType.js');
+const mongoose = require('mongoose');
 
 module.exports = {
   name: "$setMVar",
@@ -8,7 +10,7 @@ module.exports = {
   code: async d => {
     const data = d.util.aoiFunc(d);
 
-    let [ varname, value ] = data.inside.splits;
+    let [ varname, value, table = "aoi" ] = data.inside.splits;
     let res;
 
     varname = varname?.trim();
@@ -20,6 +22,7 @@ module.exports = {
     if (v[varname] === undefined) return d.channel.send("Variable not initialized.");
 
     try {
+      const DB = await mongoose.createConnection(`${url}/${table}`)
       const newAssign = await GlobalVar.findOneAndUpdate({
         variable: varname      
       }, {
@@ -31,7 +34,8 @@ module.exports = {
         await newAssign.save();
     } catch (err) {
       console.error(`Error in ${data.function}. Error: ${err}`);
-      return;
+    } finally {
+      await DB.close();
     };
 
     return {
