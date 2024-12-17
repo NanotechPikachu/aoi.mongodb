@@ -163,7 +163,7 @@ This function works primarily like a reset function which will erase the data fr
 
 Syntax: `$deleteGlobalUserVar[varname;userId?;returnCount?]`
 
-- userId - ID of the user to reset. **You can also pass "all" to reset all users var.** (Default - The current Message ID)
+- userId - ID of the user to reset. **You can also pass "all" to reset all users var.** (Default - The Author ID)
 
 - returnCount - If you wish to return the number of users var that it has reset, enable it by passing "true". Only when passing "all" in `userId` will it return a number more than 1. Normally, it returns 1 or 0 (if there is no data of that particular guild in Mongo DB). (Default - false)
 
